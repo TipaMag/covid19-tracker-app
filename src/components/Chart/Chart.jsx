@@ -4,6 +4,9 @@ import { Line, Bar } from 'react-chartjs-2'
 import { api } from '../../api/api'
 
 const ChartContainer = styled.div`
+    padding: 10px;
+`
+const ChartBody = styled.div`
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px;
@@ -78,10 +81,12 @@ const Chart = ({ data: { confirmed, deaths, recovered }, country }) => {
 
     return (
         <ChartContainer>
-            {country 
-                ? barChart 
-                : lineChart
-            }
+            <ChartBody>
+                {country
+                    ? barChart
+                    : lineChart
+                }
+            </ChartBody>
         </ChartContainer>
     )
 }
